@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock title %}
+{% block content %}
+<h1 class="text-secondary text-center" >Login Here   </h1>
+<div class="text-center">
+    {% for message in messages %} <h1> {{message}}<h1> 
+    {% endfor %}
+    <form action=" {% url "login" %} " method='post'>
+        {% csrf_token %}  <br>    
+       <input type="text" name="username" placeholder="Enter your Username" required> <br> <br>
+       <input type="text" name="password" placeholder="Enter your Password" required><br> <br>
+       <input type="submit" class="btn btn-danger" value="login">
+     </form>
+     
+</div>{% endblock content %}
+
+

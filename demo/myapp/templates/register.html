@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock title %}
+{% block content %}
+<h1 class="text-secondary text-center" >Register Page</h1>
+<div class="text-center">
+    <form action=" {% url "register_user" %} " method='post'>
+       {% csrf_token %}  <br>    
+      <input type="text" name="username" placeholder="Enter your Username" required> <br> <br>
+      <input type="text" name="password" placeholder="Enter your Password" required><br> <br>
+      <input type="text" name="gmail" placeholder="Enter your gmail" required><br> <br>
+      <input type="text" name="phone" placeholder="Enter your phone" required><br> <br>
+      <input type="text" name="user_username" placeholder="Enter your name" required><br> <br>
+      <input type="submit" class="btn btn-danger" value="Register">
+    </form>
+    
+</div>{% endblock content %}
+
+
